@@ -48,7 +48,6 @@ app.post('/produtos',function(req,res){
     console.log(req.params);
     lista_produtos.produtos.push(descricao)
     res.json(lista_produtos)
-    //res.json({ message: 'Produto Criado com Sucesso!' ,lista_produtos});
 })
 
 app.put('/produtos/:id',function(req,res){
@@ -68,7 +67,7 @@ app.put('/produtos/:id',function(req,res){
 })
 app.delete('/produtos/:id',function(req,res){
     const {id} = req.params;
-    console.log(id)
+    console.log(id);
     
     let index = lista_produtos.produtos.findIndex((item) => item.id == req.params.id);
    
@@ -79,7 +78,7 @@ app.delete('/produtos/:id',function(req,res){
     //res.json({"id":req.params.id, "descricao":req.body.descricao})
 })
 
-let porta =3000
+let porta = (process.env.PORT || 3000)
 
 app.listen(porta,function(){
     console.log(`servidor rodando: http:localhost:${porta}`)
