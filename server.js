@@ -47,7 +47,8 @@ app.post('/produtos',function(req,res){
     const descricao = req.body;
     console.log(req.params);
     lista_produtos.produtos.push(descricao)
-    res.json(lista_produtos)
+    res.json({ message: 'Produto Adicionado com Sucesso!' ,lista_produtos});
+   
 })
 
 app.put('/produtos/:id',function(req,res){
